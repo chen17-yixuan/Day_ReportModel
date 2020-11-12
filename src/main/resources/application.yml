@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    druid:
+      username: azc_jjzd
+      password: azc_conn
+      url: jdbc:mysql://chenshiqi.mysql.rds.aliyuncs.com:3306/azc_report_day?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.chen17.day_report.domain
+
+management:
+  metrics:
+    export:
+      datadog:
+        api-key: chen17
+
+
+#logging:
+#  config: classpath:log4j2_dev.xml
+#  level:
+#    root: info
